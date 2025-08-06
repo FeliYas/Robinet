@@ -8,7 +8,8 @@
 @section('content')
     <div>
         <div class="relative overflow-hidden text-[#DCDCDC] h-[300px] lg:h-[400px]">
-            <img src="{{ $banner->banner }}" alt="{{ __('Banner de Nosotros') }}" class="absolute inset-0 w-full h-full object-cover">
+            <img src="{{ $banner->banner }}" alt="{{ __('Banner de Nosotros') }}"
+                class="absolute inset-0 w-full h-full object-cover">
             <div class="absolute hidden lg:block inset-0 top-6 w-[90%] max-w-[1224px] mx-auto z-20">
                 <div>
                     <div class="flex gap-1">
@@ -43,7 +44,7 @@
                     <h2 class="text-[#DCDCDC] text-[32px] font-semibold">{{ __('La esencia que nos define') }}</h2>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         @foreach ($tarjetas as $tarjeta)
-                            <x-tarjeta-nosotros :tarjeta="$tarjeta" />
+                            <x-TarjetaNosotros :tarjeta="$tarjeta" />
                         @endforeach
                     </div>
                 </div>
