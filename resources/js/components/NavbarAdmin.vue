@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { usePage, router } from '@inertiajs/vue3';
 
 export default {

@@ -6,9 +6,9 @@
     <div class="flex-grow">
       <div
         class="flex items-center justify-center text-center mb-auto p-2 hover:scale-105 transition-transform duration-300">
-        <Link :href="route('dashboard')" class="inline-block relative group cursor-pointer">
+        <AppLink :href="route('dashboard')" class="inline-block relative group cursor-pointer">
         <img :src="logoPath" alt="Logo" class="object-cover relative z-10" />
-        </Link>
+        </AppLink>
       </div>
       <hr class="mx-3 mb-5 mt-5 border-t-[3px] border-white opacity-70 rounded" />
 
@@ -33,32 +33,32 @@
               :style="{ maxHeight: openSubmenus.homeSubmenu ? homeSubmenuHeight + 'px' : '0px' }" ref="homeSubmenu">
               <div class="absolute left-6 w-0.5 h-25 bg-gray-200 opacity-80 rounded-sm mr-3"></div>
               <li>
-                <Link :href="route('slider.dashboard')"
+                <AppLink :href="route('slider.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-image-portrait w-5 mr-2 text-sm"></i>
                   Slider
                 </span>
-                </Link>
+                </AppLink>
               </li>
               <li>
-                <Link :href="route('contenido.dashboard')"
+                <AppLink :href="route('contenido.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-align-left w-5 mr-2 text-sm"></i>
                   Contenido
                 </span>
-                </Link>
+                </AppLink>
               </li>
             </ul>
           </li>
           <li>
-            <Link :href="route('nosotros.dashboard')"
+            <AppLink :href="route('nosotros.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group cursor-pointer">
             <i class="fa-solid fa-address-card text-center w-5 text-white"></i>
             <span class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200">Nosotros</span>
             <span></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
             <button
@@ -80,43 +80,43 @@
               <div class="absolute left-6 w-0.5 h-33 bg-gray-200 opacity-80 rounded-sm mr-3"></div>
               <!-- Categorías -->
               <li>
-                <Link :href="route('categorias.dashboard')"
+                <AppLink :href="route('categorias.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-layer-group w-5 mr-2 text-sm"></i>
                   Categorías
                 </span>
-                </Link>
+                </AppLink>
               </li>
               <!-- Subcategorías -->
               <li>
-                <Link :href="route('subcategorias.dashboard')"
+                <AppLink :href="route('subcategorias.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-sitemap w-5 mr-2 text-sm"></i>
                   Subcategorías
                 </span>
-                </Link>
+                </AppLink>
               </li>
               <!-- Productos -->
               <li>
-                <Link :href="route('productos.dashboard')"
+                <AppLink :href="route('productos.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-box w-5 mr-2 text-sm"></i>
                   Productos
                 </span>
-                </Link>
+                </AppLink>
               </li>
             </ul>
           </li>
           <li>
-            <Link :href="route('proyectos.dashboard')"
+            <AppLink :href="route('proyectos.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group cursor-pointer">
             <i class="fa-solid fa-diagram-project text-center w-5 text-white"></i>
             <span class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200">Proyectos</span>
             <span></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
             <button
@@ -136,44 +136,44 @@
               :style="{ maxHeight: openSubmenus.acabadosSubmenu ? acabadosSubmenuHeight + 'px' : '0px' }" ref="acabadosSubmenu">
               <div class="absolute left-6 w-0.5 h-25 bg-gray-200 opacity-80 rounded-sm mr-3"></div>
               <li>
-                <Link :href="route('acabadoscontenido.dashboard')"
+                <AppLink :href="route('acabadoscontenido.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-align-left w-5 mr-2 text-sm"></i>
                   Contenido
                 </span>
-                </Link>
+                </AppLink>
               </li>
               <li>
-                <Link :href="route('acabados.dashboard')"
+                <AppLink :href="route('acabados.dashboard')"
                   class="block pl-10 py-2 text-gray-200 hover:text-white rounded-lg transition-all duration-200 my-1 cursor-pointer">
                 <span class="opacity-80 hover:opacity-100 transition-opacity flex items-center">
                   <i class="fa-solid fa-list w-5 mr-2 text-sm"></i>
                   Lista de acabados
                 </span>
-                </Link>
+                </AppLink>
               </li>
             </ul>
           </li>
           <li>
-            <Link :href="route('puntos.dashboard')"
+            <AppLink :href="route('puntos.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group cursor-pointer">
             <i class="fa-solid fa-location-dot text-center w-5 text-white"></i>
             <span class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200">Puntos de venta</span>
             <span></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
-            <Link :href="route('contacto.dashboard')"
+            <AppLink :href="route('contacto.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group cursor-pointer">
             <i class="fa-solid fa-square-phone text-center w-5 text-white"></i>
             <span class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200">Contacto</span>
             <span></span>
-            </Link>
+            </AppLink>
           </li>
           <hr class="mx-6 my-2 border-t-[1px] border-white/30" />
           <li>
-            <Link :href="route('logos.dashboard')"
+            <AppLink :href="route('logos.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group relative overflow-hidden cursor-pointer">
             <div
               class="absolute left-0 top-0 h-full w-0 bg-white/10 transition-all duration-300 group-hover:w-full rounded-lg">
@@ -182,10 +182,10 @@
             <span
               class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200 relative z-10">Logos</span>
             <span class="relative z-10"></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
-            <Link :href="route('usuarios.dashboard')"
+            <AppLink :href="route('usuarios.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group relative overflow-hidden cursor-pointer">
             <div
               class="absolute left-0 top-0 h-full w-0 bg-white/10 transition-all duration-300 group-hover:w-full rounded-lg">
@@ -194,10 +194,10 @@
             <span
               class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200 relative z-10">Usuarios</span>
             <span class="relative z-10"></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
-            <Link :href="route('newsletter.dashboard')"
+            <AppLink :href="route('newsletter.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group relative overflow-hidden cursor-pointer">
             <div
               class="absolute left-0 top-0 h-full w-0 bg-white/10 transition-all duration-300 group-hover:w-full rounded-lg">
@@ -206,10 +206,10 @@
             <span
               class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200 relative z-10">Newsletter</span>
             <span class="relative z-10"></span>
-            </Link>
+            </AppLink>
           </li>
           <li>
-            <Link :href="route('metadatos.dashboard')"
+            <AppLink :href="route('metadatos.dashboard')"
               class="grid grid-cols-[24px_1fr_24px] items-center gap-1 xl:gap-3 px-1 xl:px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-all duration-200 group relative overflow-hidden cursor-pointer">
             <div
               class="absolute left-0 top-0 h-full w-0 bg-white/10 transition-all duration-300 group-hover:w-full rounded-lg">
@@ -218,7 +218,7 @@
             <span
               class="whitespace-nowrap group-hover:translate-x-1 transition-transform duration-200 relative z-10">Metadatos</span>
             <span class="relative z-10"></span>
-            </Link>
+            </AppLink>
           </li>
         </ul>
       </div>
@@ -234,13 +234,13 @@
   </div>
 </template>
 
-<script>
-import { Link } from '@inertiajs/vue3';
+<script lang="js">
+import { Link as AppLink } from '@inertiajs/vue3';
 import { route } from 'ziggy-js';
 
 export default {
   components: {
-    Link
+    AppLink
   },
   props: {
     logo: {

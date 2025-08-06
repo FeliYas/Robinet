@@ -27,7 +27,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Quill from 'quill';
 import "quill/dist/quill.snow.css";
 import "quill/dist/quill.core.css";
@@ -56,7 +56,7 @@ export default {
     methods: {
         initializeEditor() {
             const toolbarId = '#toolbar-container-' + this.unique_ref;
-            
+
             this.editor = new Quill(this.$refs[this.unique_ref], {
                 theme: 'snow',
                 debug: false,
@@ -86,9 +86,12 @@ export default {
 
 <style scoped>
 .text-editor {
-    min-height: 100px; /* Ajusta el tamaño mínimo según tus necesidades */
-    max-height: 150px; /* Limita la altura máxima */
-    overflow-y: auto; /* Muestra el scroll si el contenido excede el máximo */
+    min-height: 100px;
+    /* Ajusta el tamaño mínimo según tus necesidades */
+    max-height: 150px;
+    /* Limita la altura máxima */
+    overflow-y: auto;
+    /* Muestra el scroll si el contenido excede el máximo */
     font-size: 16px;
     border: 1px solid #ccc;
     border-bottom-left-radius: 4px;

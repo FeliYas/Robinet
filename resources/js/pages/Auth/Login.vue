@@ -111,26 +111,6 @@ export default {
     };
   },
 
-  methods: {
-    submit() {
-      this.form.processing = true;
-      this.$inertia.post(route('login'), {
-        login: this.form.login,
-        password: this.form.password,
-        remember: this.form.remember
-      }, {
-        onError: (errors) => {
-          this.form.hasErrors = true;
-          this.form.errors = errors;
-          this.form.processing = false;
-        },
-        onSuccess: () => {
-          this.form.processing = false;
-        }
-      });
-    }
-  },
-
   mounted() {
     this.$nextTick(() => {
       window.addEventListener('load', () => {
@@ -144,9 +124,6 @@ export default {
   methods: {
     submit() {
       this.form.processing = true;
-
-      // Si estás usando Inertia.js
-
       this.$inertia.post(route('login'), {
         login: this.form.login,
         password: this.form.password,
@@ -369,5 +346,4 @@ input {
   opacity: 0.7;
   cursor: not-allowed;
 }
-
 </style>
