@@ -14,7 +14,7 @@ class SubcategoriaController extends Controller
 {
     public function index()
     {
-        $subcategorias = Subcategoria::orderBy('orden', 'asc')->get();
+        $subcategorias = Subcategoria::orderBy('orden', 'asc')->with('categoria')->get();
         foreach ($subcategorias as $subcategoria) {
             $subcategoria->path = Storage::url($subcategoria->path);
         }

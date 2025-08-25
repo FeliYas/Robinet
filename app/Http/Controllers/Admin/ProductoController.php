@@ -18,7 +18,7 @@ class ProductoController extends Controller
 {
     public function index()
     {
-        $productos = Producto::orderBy('orden', 'asc')->with('acabados', 'galeria')->get();
+        $productos = Producto::orderBy('orden', 'asc')->with('acabados', 'galeria', 'subcategoria')->get();
         foreach ($productos as $producto) {
             $producto->path = Storage::url($producto->path);
             if ($producto->hover) {

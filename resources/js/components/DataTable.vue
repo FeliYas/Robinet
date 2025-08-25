@@ -444,59 +444,41 @@ const submitDeleteForm = () => {
     });
 };
 
-const toggleDestacado = (id, isChecked) => {
-    // Usar directamente la función toggleDestacadoRoute
-    const toggleUrl = props.toggleDestacadoRoute(id);
+// Update optimista para switches
+const toggleSwitch = (id, key, isChecked, toggleRoute, labelSuccess, labelError) => {
+    // 1. Update optimista en el array data
+    const row = props.data.find(r => r.id === id);
+    if (!row) return;
+    const prev = row[key];
+    row[key] = isChecked ? 1 : 0;
 
-    // Usar router.post para manejar CSRF automáticamente
+    // 2. Hacer la request
+    const toggleUrl = toggleRoute(id);
     router.post(toggleUrl, {
         id: id,
-        destacado: isChecked ? 1 : 0
+        [key]: isChecked ? 1 : 0
     }, {
         preserveScroll: true,
+        preserveState: false,
         onSuccess: (page) => {
-            notification({ message: page.props.flash.message, type: "success" });
+            notification({ message: (page.props.flash && page.props.flash.message) || labelSuccess, type: "success" });
         },
         onError: () => {
-            notification({ message: "Error al actualizar el destacado", type: "error" });
+            // Revertir si hay error
+            row[key] = prev;
+            notification({ message: labelError, type: "error" });
         }
     });
+};
+
+const toggleDestacado = (id, isChecked) => {
+    toggleSwitch(id, 'destacado', isChecked, props.toggleDestacadoRoute, 'Destacado actualizado', 'Error al actualizar el destacado');
 };
 const toggleActivo = (id, isChecked) => {
-    // Usar directamente la función toggleActivoRoute
-    const toggleUrl = props.toggleActivoRoute(id);
-
-    // Usar router.post para manejar CSRF automáticamente
-    router.post(toggleUrl, {
-        id: id,
-        activo: isChecked ? 1 : 0
-    }, {
-        preserveScroll: true,
-        onSuccess: (page) => {
-            notification({ message: page.props.flash.message, type: "success" });
-        },
-        onError: () => {
-            notification({ message: "Error al actualizar el activo", type: "error" });
-        }
-    });
+    toggleSwitch(id, 'activo', isChecked, props.toggleActivoRoute, 'Activo actualizado', 'Error al actualizar el activo');
 };
 const toggleAutorizado = (id, isChecked) => {
-    // Usar directamente la función toggleAutorizadoRoute
-    const toggleUrl = props.toggleAutorizadoRoute(id);
-
-    // Usar router.post para manejar CSRF automáticamente
-    router.post(toggleUrl, {
-        id: id,
-        autorizado: isChecked ? 1 : 0
-    }, {
-        preserveScroll: true,
-        onSuccess: (page) => {
-            notification({ message: page.props.flash.message, type: "success" });
-        },
-        onError: () => {
-            notification({ message: "Error al actualizar el autorizado", type: "error" });
-        }
-    });
+    toggleSwitch(id, 'autorizado', isChecked, props.toggleAutorizadoRoute, 'Autorizado actualizado', 'Error al actualizar el autorizado');
 };
 </script>
 
@@ -630,7 +612,8 @@ const toggleAutorizado = (id, isChecked) => {
                         <!-- Celda de acciones -->
                         <div class="grid-cell grid-actions-cell">
                             <div class="grid-actions">
-                                <button v-if="entityType" class="action-button view-button" @click="openGaleriaModal(row)">
+                                <button v-if="entityType" class="action-button view-button"
+                                    @click="openGaleriaModal(row)">
                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="#1e3a8a"
